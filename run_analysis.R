@@ -48,7 +48,8 @@ test_melted <- melt(test, id=c("subject_id","activity_code")) ##Melts "test" dat
                                                               ##labeled "value". 
 
 
-train_names_of_mean_variables_to_retain <- unique(grep("mean.", train_melted[,3], value = TRUE, ignore.case = FALSE, fixed = TRUE)) 
+train_names_of_mean_variables_to_retain <- {unique(grep("mean.", train_melted[,3], value = TRUE, 
+                                            ignore.case = FALSE, fixed = TRUE))} 
                                                               ##Creates a character vector of the names 
                                                               ##of the signal, statistic, and dimension 
                                                               ##combination variables that focus on the 
@@ -56,7 +57,8 @@ train_names_of_mean_variables_to_retain <- unique(grep("mean.", train_melted[,3]
                                                               ##for the training data (i.e., all 
                                                               ##variables that have "mean." in their name).
 
-train_names_of_std_variables_to_retain <- unique(grep("std.", train_melted[,3], value = TRUE, ignore.case = FALSE, fixed = TRUE)) 
+train_names_of_std_variables_to_retain <- {unique(grep("std.", train_melted[,3], value = TRUE, 
+                                           ignore.case = FALSE, fixed = TRUE))} 
                                                               ##Creates a character vector of the names 
                                                               ##of the signal, statistic, and dimension 
                                                               ##combination variables that focus on the 
@@ -74,7 +76,8 @@ train_names_of_variables_to_retain <- c(train_names_of_mean_variables_to_retain,
                                                               ##training data (i.e., all variables that 
                                                               ##have "mean." or "std." in their name).
 
-test_names_of_mean_variables_to_retain <- unique(grep("mean.", test_melted[,3], value = TRUE, ignore.case = FALSE, fixed = TRUE)) 
+test_names_of_mean_variables_to_retain <- {unique(grep("mean.", test_melted[,3], value = TRUE, 
+                                           ignore.case = FALSE, fixed = TRUE))} 
                                                               ##Creates a character vector of the names
                                                               ##of the signal, statistic, and dimension 
                                                               ##combination variables that focus on the
@@ -82,7 +85,8 @@ test_names_of_mean_variables_to_retain <- unique(grep("mean.", test_melted[,3], 
                                                               ##for the test data (i.e., all variables 
                                                               ##that have "mean." in their name).
 
-test_names_of_std_variables_to_retain <- unique(grep("std.", test_melted[,3], value = TRUE, ignore.case = FALSE, fixed = TRUE)) 
+test_names_of_std_variables_to_retain <- {unique(grep("std.", test_melted[,3], value = TRUE, 
+                                          ignore.case = FALSE, fixed = TRUE))} 
                                                               ##Creates a character vector of the names
                                                               ##of the signal, statistic, and dimension
                                                               ##combination variables that focus on the
@@ -122,21 +126,24 @@ test_melted_filter_variables <- filter(test_melted, variable %in% test_names_of_
                                                               ##a new data frame.  
 
 
-train_melted_filter_variables_separate <- separate(train_melted_filter_variables, variable, c("signal", "statistic", "dimension")) 
+train_melted_filter_variables_separate <- {separate(train_melted_filter_variables, variable, 
+                                           c("signal", "statistic", "dimension"))} 
                                                               ##Separates the remaining signal, statistic, 
                                                               ##and dimension combination variables into 
                                                               ##three separate variables (i.e., "signal", 
                                                               ##"statistic", and "dimension") for the 
                                                               ##training data. 
 
-test_melted_filter_variables_separate <- separate(test_melted_filter_variables, variable, c("signal", "statistic", "dimension")) 
+test_melted_filter_variables_separate <- {separate(test_melted_filter_variables, variable, 
+                                          c("signal", "statistic", "dimension"))} 
                                                               ##Separates the remaining signal, statistic, 
                                                               ##and dimension combination variables into 
                                                               ##three separate variables (i.e., "signal", 
                                                               ##"statistic", and "dimension") for the 
                                                               ##test data. 
 
-train_melted_filter_variables_separate_data_set_id <- mutate(train_melted_filter_variables_separate, data_set_id = "train") 
+train_melted_filter_variables_separate_data_set_id <- {mutate(train_melted_filter_variables_separate, 
+                                                       data_set_id = "train")} 
                                                               ##Adds a data set id column 
                                                               ##(i.e., "data_set_id") to the melted, 
                                                               ##filtered, and separated variables 
@@ -149,13 +156,15 @@ test_melted_filter_variables_separate_data_set_id <- mutate(test_melted_filter_v
                                                               ##data set.
 
 
-melted_filter_variables_separate_data_set_id <- rbind(train_melted_filter_variables_separate_data_set_id, test_melted_filter_variables_separate_data_set_id) 
+melted_filter_variables_separate_data_set_id <- {rbind(train_melted_filter_variables_separate_data_set_id,
+                                                 test_melted_filter_variables_separate_data_set_id)} 
                                                               ##Merges the melted, filtered, and 
                                                               ##separated variables training and test 
                                                               ##data sets. 
 
 
-grouping_structure <- group_by(melted_filter_variables_separate_data_set_id, activity_code, subject_id, signal, statistic, dimension, data_set_id) 
+grouping_structure <- {group_by(melted_filter_variables_separate_data_set_id, activity_code, subject_id,
+                       signal, statistic, dimension, data_set_id)} 
                                                               ##Specifies the grouping structure to be 
                                                               ##applied in subsequent call to summarize 
                                                               ##the data set. 
@@ -208,7 +217,8 @@ for(i in 1:length(data_set_mean_values_data_frame[,1])) {
 }
 
 
-data_set_mean_values_data_frame_activity <- data.frame(activity_name, data_set_mean_values_data_frame[,2:7], stringsAsFactors = FALSE)
+data_set_mean_values_data_frame_activity <- {data.frame(activity_name, data_set_mean_values_data_frame[,2:7], 
+                                             stringsAsFactors = FALSE)}
                                                               ##Creates a new data frame object called 
                                                               ##"data_set_mean_values_data_frame_activity".  
                                                               ##This object is identical to the 
