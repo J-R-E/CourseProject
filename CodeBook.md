@@ -14,48 +14,48 @@ activityrecognition@smartlab.ws
 www.smartlab.ws  
 
 
-variable name: activity_name.
-description: physical activities that people engaged in while wearing a smartphone.
-class: character.
-6 levels: walking, walkingUpStairs, walkingDownStairs, sitting, standing, laying.
+Variable Name: activity_name.
+Description: physical activities that people engaged in while wearing a smartphone.
+Class: character.
+6 Levels: walking, walkingUpStairs, walkingDownStairs, sitting, standing, laying.
 
 
-variable name: subject_id.
-description: identification numbers for 30 volunteers.
-class: integer.
-30 levels: 1 through 30 consecutively.
+Variable Name: subject_id.
+Description: identification numbers for 30 volunteers.
+Class: integer.
+30 Levels: 1 through 30 consecutively.
 
 
-variable name: signal.
-description: various kinematic signal captured by smartphone.
-class: character.
-17 levels: fBodyAcc, fBodyAccJerk, fBodyAccMag, fBodyBodyAccJerkMag, 
+Variable Name: signal.
+Description: various kinematic signal captured by smartphone.
+Class: character.
+17 Levels: fBodyAcc, fBodyAccJerk, fBodyAccMag, fBodyBodyAccJerkMag, 
 fBodyBodyGyroJerkMag,fBodyBodyGyroMag, fBodyGyro, tBodyAcc, tBodyAccJerk, 
 tBodyAccJerkMag, tBodyAccMag,tBodyGyro, tBodyGyroJerk, tBodyGyroJerkMag, 
 tBodyGyroMag, tGravityAcc, tGravityAccMag.  
 
 
-variable name: statistic.
-description: statistics that were measured from the signals (i.e., the mean and standard deviation).
-class: character.
-2 levels: mean, std.
+Variable Name: statistic.
+Description: statistics that were measured from the signals (i.e., the mean and standard deviation).
+Class: character.
+2 Levels: mean, std.
 
 
-variable name: dimension.
-description: indicates 3-axial signals for select signals.  
-class: character.
-3 levels: x, y, z.
+Variable Name: dimension.
+Description: indicates 3-axial signals for select signals.  
+Class: character.
+3 Levels: x, y, z.
 
 
-variable name: data_set_id.
-description: indicates whether observation is from the training or test data sets.
-class: character.
-2 levels: train, test.
+Variable Name: data_set_id.
+Description: indicates whether observation is from the training or test data sets.
+Class: character.
+2 Levels: train, test.
 
 
-variable name: mean_value.
-description: the mean value calculated for a given subject across observations for a given 
+Variable Name: mean_value.
+Description: the mean value calculated for a given subject across observations for a given 
 activity, signal, statistic, and dimension if applicable. 
-class: numeric.
-levels: continuous. 
+Class: numeric.
+Levels: continuous. 
  
