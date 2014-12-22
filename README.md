@@ -6,14 +6,12 @@ Course Project for Getting and Cleaning Data Coursera
 
 The starting point for the current project was the following 6 text files:
 
-subject_train
-subject_test
-
-
-X_train
-X_test
-y_train
-y_test
+* subject_train
+* subject_test
+* X_train
+* X_test
+* y_train
+* y_test
 
 These files were taken from the following data set:
 
