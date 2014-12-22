@@ -15,6 +15,9 @@
 
 
 
+
+
+
 * variable name: activity_name
 * description: physical activities that people engaged in while wearing a smartphone.
 * class: character
@@ -27,10 +30,14 @@
 * laying
 
 
+
+
 * variable name: subject_id
 * description: identification numbers for 30 volunteers.
 * class: integer
 * 30 levels: 1 through 30 consecutively
+
+
 
 
 * variable name: signal
@@ -56,10 +63,14 @@
 * tGravityAccMag  
 
 
+
+
 * variable name: statistic
 * description: statistics that were measured from the signals (i.e., the mean and standard deviation).
 * class: character
 * 2 levels: mean, std
+
+
 
 
 * variable name: dimension
@@ -68,10 +79,14 @@
 * 3 levels: x, y, z
 
 
+
+
 * variable name: data_set_id
 * description: indicates whether observation is from the training or test data sets.
 * class: character
 * 2 levels: train, test
+
+
 
 
 * variable name: mean_value
